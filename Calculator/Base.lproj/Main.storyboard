@@ -220,7 +220,7 @@
                                     <imageReference key="image" image="clock" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="showCalculationsList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cti-nr-pah"/>
+                                    <segue destination="vOY-Pc-4bu" kind="show" identifier="Calculations_list" id="stD-Yl-tQA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -321,47 +321,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="whk-rC-d6Q">
-                                <rect key="frame" x="175" y="416" width="43" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <lineBreakStrategy key="lineBreakStrategy" hangulWordPriority="YES"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzM-ZF-vhW">
-                                <rect key="frame" x="151.33333333333334" y="503" width="90.666666666666657" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
-                                <connections>
-                                    <action selector="dismissVC:" destination="vOY-Pc-4bu" eventType="touchUpInside" id="R3C-9B-emq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DM1-PQ-iai">
-                                <rect key="frame" x="154.66666666666666" y="313" width="83.666666666666657" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MOk-6g-GIs">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uWT-EI-Wwg"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
-                            <constraint firstItem="HzM-ZF-vhW" firstAttribute="top" secondItem="whk-rC-d6Q" secondAttribute="bottom" constant="67" id="5Ll-aP-UpX"/>
-                            <constraint firstItem="whk-rC-d6Q" firstAttribute="centerX" secondItem="ngI-XH-fe4" secondAttribute="centerX" id="DlX-sq-Kgd"/>
-                            <constraint firstItem="whk-rC-d6Q" firstAttribute="top" secondItem="DM1-PQ-iai" secondAttribute="bottom" constant="82" id="EEA-yX-Izg"/>
-                            <constraint firstItem="whk-rC-d6Q" firstAttribute="centerY" secondItem="ngI-XH-fe4" secondAttribute="centerY" id="H1c-4D-PMK"/>
-                            <constraint firstItem="whk-rC-d6Q" firstAttribute="centerX" secondItem="ngI-XH-fe4" secondAttribute="centerX" id="Mbc-SX-6mf"/>
-                            <constraint firstItem="whk-rC-d6Q" firstAttribute="top" secondItem="uWT-EI-Wwg" secondAttribute="top" constant="357" id="NtI-nV-2Ck"/>
-                            <constraint firstItem="DM1-PQ-iai" firstAttribute="centerX" secondItem="ngI-XH-fe4" secondAttribute="centerX" id="h52-jy-jIO"/>
-                            <constraint firstItem="whk-rC-d6Q" firstAttribute="leading" secondItem="uWT-EI-Wwg" secondAttribute="leading" constant="175" id="omY-NL-PKP"/>
-                            <constraint firstItem="HzM-ZF-vhW" firstAttribute="centerX" secondItem="ngI-XH-fe4" secondAttribute="centerX" id="vmg-Bt-aKI"/>
-                            <constraint firstItem="DM1-PQ-iai" firstAttribute="centerX" secondItem="ngI-XH-fe4" secondAttribute="centerX" id="w1t-Rj-prD"/>
+                            <constraint firstItem="MOk-6g-GIs" firstAttribute="leading" secondItem="uWT-EI-Wwg" secondAttribute="leading" id="4hn-qO-jHR"/>
+                            <constraint firstItem="MOk-6g-GIs" firstAttribute="top" secondItem="uWT-EI-Wwg" secondAttribute="top" id="GYZ-no-YIf"/>
+                            <constraint firstItem="uWT-EI-Wwg" firstAttribute="bottom" secondItem="MOk-6g-GIs" secondAttribute="bottom" id="Tux-uS-UL8"/>
+                            <constraint firstItem="uWT-EI-Wwg" firstAttribute="trailing" secondItem="MOk-6g-GIs" secondAttribute="trailing" id="rzn-Tl-ZQP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="История" id="HoA-ZO-UVM"/>
-                    <connections>
-                        <outlet property="calculationLabel" destination="whk-rC-d6Q" id="Yyx-Yg-Jcl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5K-Kg-1f9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
